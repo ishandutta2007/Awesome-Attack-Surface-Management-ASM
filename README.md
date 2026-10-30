@@ -1,170 +1,193 @@
-# Awesome-Attack-Surface-Management-ASM
-
-# Awesome-Attack-Surface-Management-ASM
-
-**Top Attack Surface Management ASM (Opensource) 🌟 Star if you like it! 🌟**
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**
-
-*Focused on External Asset Discovery, Shadow IT Detection, Exposure Prioritization & Continuous Monitoring*
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Attack Surface Management (ASM)**. These tools enable security teams to discover unknown internet-facing assets, identify exposures before attackers exploit them, and continuously monitor for drift—from fully managed enterprise platforms with global internet scanning and adversary intelligence to self-hosted recon frameworks and open ASM platforms that give teams complete control over their discovery pipelines and data.
-
-
-
-**Examples** include CrowdStrike Falcon Surface, Palo Alto Cortex Xpanse, Censys, Shodan, Recorded Future, NetSPI, Rapid7, Bishop Fox Cosmos, ProjectDiscovery Cloud, and Hadrian (the category leaders in commercial space).
-
-
-
-**Open-source emphasis**: This section is expanded with every relevant project for self-hosted attack surface discovery, reconnaissance, and open ASM infrastructure. **Critical note**: The open-source ASM space is active but fragmented—**OWASP Amass** dominates subdomain enumeration, **reNgine** and **reNgine-ng** provide full recon suites, and **OASM** offers a modern distributed ASM platform. However, no open-source project matches Censys's internet-wide scanning map or CrowdStrike's adversary intelligence-driven prioritization.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## Sector Overview & Market Dynamics
-
-The global Attack Surface Management (ASM) market is valued between **$1.25 billion and $1.86 billion** in 2025–2026, projected to surpass **$5.7 billion by 2030** at an exceptional compound annual growth rate (CAGR) of roughly **24% to 31%**. The sector is **moderately to highly fragmented and intensely competitive** rather than a winner-take-all ecosystem—featuring agile specialized pure-play innovators (e.g., Censys, Hadrian, ProjectDiscovery) competing alongside major cybersecurity conglomerates (Palo Alto Networks, CrowdStrike) that routinely acquire niche EASM solutions to bundle into broader CTEM, XDR, and Exposure Management platforms.
-
-## SaaS/Hosted Platforms
-
-| Product | Company Valuation / Scale | Starting Pricing | Free Tier Limits / Trial | Core Differentiator / Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| **[Palo Alto Cortex Xpanse](https://www.paloaltonetworks.com/)** | ~$116B – $128B Market Cap (Public: PANW) | ~$60,000/yr base platform + $7/asset/yr (~$70,850/yr on UK G-Cloud; entry deployments ~$95,000/yr) | No permanent free tier; Proof of Concept (PoC) / guided trial available via direct sales/partner engagement only | Active EASM integrating with Cortex XSIAM/XSOAR, automated remediation, unmanaged Shadow AI/OT exposure discovery. |
-| **[CrowdStrike Falcon Surface](https://www.crowdstrike.com/en-au/resources/data-sheets/falcon-surface/)** | ~$98B – $137B Market Cap (Public: CRWD) | ~$248 – $378/tier/yr modular add-on pricing (Texas DIR schedule; core Falcon endpoint plans start at $59.99/device/yr) | 15-day free trial of baseline Falcon platform (NGAV/Device Control, no credit card required); Surface module evaluation available on request | Adversary-driven EASM indexing 7B+ internet assets yearly; tight integration with Falcon Threat Intelligence & XDR. |
-| **[Recorded Future Attack Surface Intelligence](https://www.recordedfuture.com/products/attack-surface-intelligence)** | $2.65B Acquisition Valuation (Mastercard; ~$300M ARR) | Starting at £67,500/yr (~$85,000/yr) for dedicated ASI modules on UK G-Cloud; enterprise threat intelligence bundles start at ~$40,000 – $60,000/yr | No permanent free tier; 30-day integration trials (Sentinel/Splunk) and free utility tools (browser extension & file sandbox) | 10+ years of historical DNS/WHOIS/TLS intelligence mapped against adversary infrastructure via Intelligence Graph. |
-| **[Rapid7](https://www.rapid7.com/)** | ~$1B Market Cap / ~$860M Revenue (Public: RPD) | $1.62/asset/month billed annually (~$9,720/yr for 500 assets minimum); Command cloud security tiers start at $5,775/mo | 30-day full-featured free trial of InsightVM/Security Console & Agents (no credit card required) | Full-lifecycle exposure management and hybrid perimeter discovery (Surface Command) unified with InsightVM & SIEM. |
-| **[NetSPI Attack Surface Visibility](https://www.netspi.com/attack-surface-visibility/)** | ~$200M+ Revenue / $500M KKR Investment (Merged with Synack) | Starting at ~$7,000/year for baseline entry monitoring scopes | No permanent free tier or self-serve trial; live product demos and scoping consultations available on request | Tech-enabled managed ASM combining automated continuous external/cloud discovery with human penetration tester validation. |
-| **[Censys](https://censys.com/)** | $328M+ Valuation ($149M+ Raised; Series D 2026) | $62 – $69/month (Solo tier, ~$744/yr); Teams tier at $449 – $499/month | Permanent Free Community Tier: Capped at 1 page (100 results) per query, basic protocols/lookups only, no historical host timelines | Comprehensive internet-wide scanning map covering all 65,535 ports with high-frequency continuous visibility. |
-| **[Bishop Fox Cosmos](https://bishopfox.com/)** | ~$250M – $500M Valuation (~$100M – $115M Revenue; $154M+ Raised) | Quote-based enterprise engagements; custom annual subscriptions based on active perimeter scope | No free tier or self-serve trial for Cosmos; maintains free open-source tooling (AIMap, CloudFox, Eyeballer) | Managed continuous threat exposure management (CTEM) combining automated asset discovery with manual expert exploitability validation. |
-| **[Hadrian](https://www.hadrian.io/)** | ~$65M Total Funding ($40M Series B in Oct 2026; 200+ enterprise clients) | €1,250/test for on-demand Nova agentic pentesting; annual Atlas platform subscriptions scale by monitored perimeter | No self-serve trial for Atlas platform; complimentary single external perimeter discovery scan available on website | Autonomous agentic AI offensive security platform combining continuous perimeter mapping with autonomous penetration testing. |
-| **[ProjectDiscovery Cloud](https://cloud.projectdiscovery.io/)** | $28M Total Funding (Series A led by CRV; ~$5M – $6M ARR) | $200/seat/month (Pay-As-You-Go/Team tier, billed annually) | Permanent Free Researcher Plan: 1 seat, limited one-time usage allowance, standard AI/scanner models, community Nuclei templates | Cloud orchestration platform for open-source favorites (Nuclei, Subfinder, httpx) with continuous asset scanning workflows. |
-| **[Shodan](https://www.shodan.io/)** | Bootstrapped & Self-Sustaining (Solo founder, profitable since 2009) | $49 one-time lifetime membership; API subscriptions start at $69/month (Freelancer) to $359 – $1,099/month (Corporate) | Permanent Free Account: Max 100 search results/query, basic filters only, 0 scan credits, 0 monitored network IPs (free academic upgrades for .edu) | Pioneering internet-connected device search engine with vast historical banner, service, and IoT exposure indexing. |
-
-## Open-Source GitHub Projects
-
-
-
-- **[OWASP Amass](https://github.com/owasp-amass/amass)**
-
-  **In-depth attack surface mapping and asset discovery** (Apache 2.0) — **the most widely adopted open-source recon tool** with ~15,000 GitHub stars . **Features**: **Subdomain enumeration** via 50+ data sources including APIs (Shodan, VirusTotal, SecurityTrails, Censys, FOFA, ZoomEye), certificate transparency, DNS brute forcing, web archives, and WHOIS . **Network mapping** of attack surfaces using open-source intelligence and active reconnaissance. Used by Accenture's adversary simulation team and Visma's red team . **Tech stack**: Go. **Deploy**: CLI (`go install`, Homebrew, Docker). **Trade-off**: **Subdomain enumeration and asset discovery only**—no vulnerability scanning, exposure prioritization, or continuous monitoring dashboard. It is a recon foundation, not a complete ASM platform. **Best for**: security teams and bug bounty hunters wanting the most comprehensive open-source subdomain and asset discovery engine—as the first stage of a custom ASM pipeline.
-
-
-
-- **[reNgine](https://github.com/yogeshojha/rengine)**
-
-  **Automated reconnaissance framework for web applications** (GPL-3.0 per Docker Hub) — **the most complete open-source recon suite with a web UI** . **Features**: **Subdomain discovery** (Subfinder, Amass), **port discovery** (Naabu), **endpoint discovery**, **directory bruteforce**, **screenshot gathering** with gallery and filters, **vulnerability scan using Nuclei**, OSINT capabilities (employee/email gathering, leaked database checks), **customizable scan engines** via YAML, **periodic scans** with change detection, **notifications** to Slack/Discord/Telegram, **automatic HackerOne reporting** . **Tech stack**: Python (Django), PostgreSQL, Redis. **Deploy**: Self-hosted (Ubuntu/VPS with installation script). **Trade-off**: **Recon and vulnerability scanning, not full ASM lifecycle**—no asset ownership attribution, no exposure scoring based on adversary intelligence. **Best for**: penetration testers and bug bounty hunters wanting a comprehensive recon suite with a UI and automation.
-
-
-
-- **[reNgine-ng](https://github.com/Security-Tools-Alliance/rengine-ng)**
-
-  **Next-generation fork of reNgine** (license per repo) — **a modernized, refactored alternative to the original reNgine** . **Features**: Same core capabilities as reNgine (subdomain discovery, port scanning, screenshots, Nuclei vulnerability scanning, notifications) with **significant refactoring by the community** and a 2.0 release. Designed to address limitations of the original and surpass commercial offerings for web application reconnaissance . **Tech stack**: Python (Django), PostgreSQL, Redis. **Deploy**: Self-hosted (Ubuntu/VPS). **Trade-off**: **Fork fragmentation**—the original reNgine and reNgine-ng have diverged; choose based on community activity and feature requirements. Still recon-focused, not full ASM. **Best for**: teams wanting a modernized reNgine with active community development.
-
-
-
-- **[OASM (Open Attack Surface Management)](https://github.com/oasm-platform/open-asm)**
-
-  **Open-source ASM platform** (GPL-3.0) — **the most complete open-source ASM platform architecture** found in this research . **Features**: **Asset discovery and management** (domains, IPs, services) with grouping and multi-workspace support; **vulnerability assessment** with issue tracking, risk analysis, and remediation guidance; **technology detection**; **distributed scanning engine** with horizontally scalable workers; **tool integration framework**; **MCP server integration** for AI assistants to query asset data via natural language; **workflow automation** with scheduled scans and alerts; **real-time monitoring** with statistics dashboard . **Architecture**: Web console, core API, Redis queue, PostgreSQL, distributed workers, MCP server . **Tech stack**: Per repository. **Deploy**: Docker Compose (one command) . **Trade-off**: **Younger project with limited community validation** compared to Amass or reNgine. Does not have Censys-scale internet scanning or adversary intelligence. **Best for**: security teams wanting a self-hosted ASM platform with a modern architecture, distributed scanning, and AI assistant integration—willing to evaluate and contribute to an early-stage project.
-
-
-
-- **[IVRE](https://github.com/ivre/ivre)**
-
-  **Network recon framework** (GPL-3.0) — **the most mature open-source alternative to Shodan/Censys for building your own internet-wide scanning infrastructure**, with ~4,100 GitHub stars . **Features**: Build **self-hosted and fully-controlled** alternatives to Shodan, ZoomEye, Censys, and GreyNoise; run your own **Passive DNS service**; collect and analyze network intelligence from your sensors; uses **Nmap, Masscan, Zeek, p0f, and ProjectDiscovery tools** . **Tech stack**: Python. **Deploy**: Self-hosted. **Trade-off**: **Infrastructure for building ASM, not a turnkey ASM platform**—requires significant operational investment to run scanning sensors and manage data. **Best for**: organizations wanting to operate their own internet-wide scanning capability—essentially building a private Shodan/Censys.
-
-
-
-- **[vamp-easm](https://pypi.org/project/vamp-easm/)**
-
-  **Lightweight continuous EASM engine with delta detection** (PyPI) — **the most focused open-source tool for continuous external monitoring with change detection** . **Features**: **Daily diff tracking**—each run compared against previous snapshot in SQLite, surfacing only what changed; **subdomain enumeration** via crt.sh and HackerTarget; **port scanning** (async TCP, optional nmap); **TLS certificate inspection** (issuer, expiration, SANs, self-signed detection); **webhook alerts** for CRITICAL/HIGH diffs (Slack/Discord compatible); **Shodan and Censys enrichment**; CI/CD-ready exit codes (0 clean, 1 HIGH, 2 CRITICAL) . **Tech stack**: Python (pip install). **Deploy**: CLI (`pip install vamp-easm`). **Trade-off**: **Delta detection engine, not a full ASM platform**—no web UI, no vulnerability scanning beyond enrichment, no asset attribution. **Best for**: teams wanting a lightweight, scriptable continuous monitoring tool that alerts only on changes—ideal for CI/CD or cron-based monitoring.
-
-
-
-- **[ProjectDiscovery Nuclei](https://github.com/projectdiscovery/nuclei)**
-
-  **Fast, customizable vulnerability scanner** (MIT) — **the most widely used open-source vulnerability scanner for ASM pipelines**, with ~14,000 GitHub stars (as part of the ProjectDiscovery ecosystem) . **Features**: Template-based vulnerability scanning with a community-curated template repository; used by reNgine, OASM, and countless custom ASM pipelines as the vulnerability detection engine. **Tech stack**: Go. **Deploy**: CLI, Docker, or managed via ProjectDiscovery Cloud . **Trade-off**: **Scanner only**—no asset discovery, ASM workflow, or exposure prioritization. It is a component in a larger pipeline. **Best for**: teams building ASM pipelines needing a proven, fast vulnerability scanner with an active template community.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Red Kite** — Extensible Attack Surface Management tool (per GitHub topic listing). **Note**: Listed among ASM repositories but with limited documentation available in search results. **Best for**: exploration, not production adoption .
-
-- **Mantis** — Security framework automating discovery, reconnaissance, and vulnerability scanning workflows. **Note**: Workflow automation, not a full ASM platform . **Best for**: teams wanting to automate recon-to-vuln-scan pipelines.
-
-- **ElectricEye** — Multi-cloud, multi-SaaS security posture and attack surface monitoring (Python CLI). **Note**: Cloud/SaaS posture focus, not internet-wide asset discovery . **Best for**: cloud security teams wanting posture checks across AWS, Azure, GCP, and SaaS.
-
-
-
-**Frameworks for building custom systems**: Combine **OWASP Amass** for comprehensive subdomain and asset discovery with **Nuclei** for vulnerability scanning, **vamp-easm** for continuous delta monitoring, and **OASM** as the ASM platform layer—creating a self-hosted ASM stack. **None of these match Censys's internet-wide scanning map or CrowdStrike's adversary intelligence-driven prioritization**; those require commercial platforms or building your own scanning infrastructure with **IVRE**.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, license (for open-source), and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- ASM platforms scanning external infrastructure must respect legal boundaries—only scan assets you own or have explicit authorization to test. Unauthorized scanning may violate computer fraud laws (CFAA, etc.).
-
-- **The "internet-wide scanning platform" vs. "recon framework" vs. "ASM platform" vs. "continuous monitoring engine" distinction is critical.** **Censys and Shodan** operate **internet-wide scanning infrastructure**—their visibility comes from scanning the entire internet continuously . **CrowdStrike and Cortex Xpanse** are **adversary-intelligence-driven ASM platforms**—they prioritize exposures based on threat context . **OWASP Amass** and **reNgine** are **recon frameworks**—they discover assets but do not provide exposure prioritization or full ASM workflow . **OASM** is an **ASM platform**—it orchestrates discovery, vulnerability assessment, and issue tracking . **vamp-easm** is a **continuous monitoring engine**—it detects changes, not a full platform . **Choose based on whether you need visibility, workflow, or change detection.**
-
-- **OWASP Amass is the foundation of most open-source ASM pipelines.** It is the most comprehensive subdomain enumeration tool, used by Accenture and Visma red teams . **The trade-off**: it discovers assets but does not assess or prioritize them—you need Nuclei and a platform layer on top.
-
-- **reNgine and reNgine-ng are the most complete open-source recon suites with UI**, combining Amass, Subfinder, Naabu, and Nuclei into a single workflow with screenshots and notifications . **The trade-off**: they are recon-focused, not full ASM lifecycle management.
-
-- **OASM is the most ambitious open-source ASM platform**, with distributed workers, MCP integration, and a modern architecture . **The trade-off**: it is early-stage with limited community validation—evaluate maturity before production use.
-
-- **IVRE is the only open-source path to Censys-like visibility**—it lets you build your own internet-wide scanning infrastructure with Nmap, Masscan, Zeek, and ProjectDiscovery tools . **The trade-off**: significant operational investment to run scanning sensors and manage data.
-
-- **Pricing opacity is universal across commercial ASM vendors.** CrowdStrike, Cortex Xpanse, Censys, Shodan Enterprise, Recorded Future, NetSPI, Bishop Fox, Rapid7, and Hadrian all require sales contact. ProjectDiscovery Cloud has a free tier. **Validate with direct vendor conversations against your asset count and scanning scope.**
-
-- Self-hosted open-source solutions require proper infrastructure, legal review of scanning scope, and ongoing maintenance. **Scanning external infrastructure without authorization is illegal**—ensure your deployment only targets assets you own or have written permission to test.
-
-
+# Awesome Attack Surface Management (ASM) 🛡️
+
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Attack Surface Management (ASM) Banner" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Attack-Surface-Management-ASM/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Attack-Surface-Management-ASM?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Attack-Surface-Management-ASM/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Attack-Surface-Management-ASM?style=social" alt="GitHub forks" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
+> ⚡ **A curated directory of premier SaaS platforms and battle-tested open-source repositories for External Attack Surface Management (EASM), Cyber Asset Attack Surface Management (CAASM), and Continuous Threat Exposure Management (CTEM).**
 
+---
 
-**Made for security engineers, red teams, and organizations building transparent attack surface management solutions.**
+## 📑 Table of Contents
 
-Let's make Attack Surface Management more open, data-driven, and exposure-aware.
+- [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🏢 SaaS / Hosted Platforms](#-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+  - [Top Open-Source ASM & Recon Tools (Ranked by Stars)](#top-open-source-asm--recon-tools-ranked-by-stars)
+  - [Architectural Blueprint for Custom ASM Pipelines](#architectural-blueprint-for-custom-asm-pipelines)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support](#-support)
+- [📈 Star History](#-star-history)
+- [⚠️ Disclaimer](#️-disclaimer)
+
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global **Attack Surface Management (ASM)** market is estimated between **$1.25 billion and $1.86 billion** in 2025–2026, projected to surpass **$5.74 billion by 2030** with an exceptional Compound Annual Growth Rate (CAGR) of roughly **24% to 31%**.
+
+The sector is **moderately to highly fragmented and intensely competitive** rather than a winner-take-all monopoly:
+- **Enterprise Consolidation**: Major cybersecurity titans (such as Palo Alto Networks and CrowdStrike) continuously acquire agile EASM pioneers to bundle attack-surface mapping into broader XDR, SIEM, and Continuous Threat Exposure Management (CTEM) ecosystems.
+- **Specialized Innovators**: Pure-play mapping engines (Censys, ProjectDiscovery, Hadrian) maintain technological moats through proprietary global cartography, high-frequency full-port indexing, or agentic autonomous penetration testing.
+- **Open-Source Foundations**: Modern security engineering teams increasingly pair modular open-source recon scanners with distributed queue architectures for sovereign, self-hosted attack surface discovery.
+
+---
+
+## 🏢 SaaS / Hosted Platforms
+
+A comprehensive evaluation of leading commercial attack surface platforms, ranked in descending order by company valuation and organizational scale:
+
+| 🏢 Product | 📈 Valuation / Scale | 💰 Starting Pricing | 🎁 Free Tier Limits / Evaluation | 🎯 Core Capabilities & Differentiator |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Palo Alto Cortex Xpanse](https://www.paloaltonetworks.com/)** | ~$116B – $128B Market Cap *(PANW)* | ~$60,000/yr platform fee + $7/monitored asset/yr *(~£70,850/yr UK G-Cloud; deployments typically begin at ~$95,000/yr)* | 🚫 No permanent free tier; Proof-of-Concept (PoC) / guided evaluation available via direct sales/partner engagement | Active automated remediation, unmanaged Shadow AI/OT exposure discovery, bidirectional sync with Cortex XSIAM and XSOAR. |
+| **[CrowdStrike Falcon Surface](https://www.crowdstrike.com/en-au/resources/data-sheets/falcon-surface/)** | ~$98B – $137B Market Cap *(CRWD)* | ~$248 – $378/tier/yr modular add-on pricing *(Texas DIR catalog; foundational Falcon endpoint protection starts at $59.99/device/yr)* | ⏱️ 15-day full-featured free trial of core Falcon platform (NGAV/Device Control, no credit card required); Surface module demo on request | Adversary-centric EASM indexing 7B+ internet assets yearly; prioritizes exposures via adversary weaponization telemetry. |
+| **[Recorded Future Attack Surface Intelligence](https://www.recordedfuture.com/products/attack-surface-intelligence)** | $2.65B Acquisition Valuation *(Mastercard; ~$300M ARR)* | Dedicated ASI module SKU starts at £67,500/yr *(~$85,000/yr on UK G-Cloud; broader threat intelligence bundles start from ~$40k–$60k/yr)* | 🚫 No permanent free tier; 30-day integration trials for Microsoft Sentinel/Splunk; free browser extension & file sandbox | 10+ years of historical DNS, WHOIS, and TLS certificate cartography cross-referenced against adversary infrastructure. |
+| **[Rapid7](https://www.rapid7.com/)** | ~$1B Market Cap / ~$860M Revenue *(RPD)* | $1.62/asset/month billed annually *(~$9,720/yr for 500 assets baseline); Command cloud security tiers start at $5,775/mo* | ⏱️ 30-day full-featured free trial of InsightVM/Security Console & Agents (no credit card required) | Full-lifecycle vulnerability management and hybrid perimeter discovery (*Surface Command*) integrated with Insight Platform. |
+| **[NetSPI Attack Surface Visibility](https://www.netspi.com/attack-surface-visibility/)** | ~$200M+ Revenue / $500M KKR Investment *(Merged with Synack)* | Starting at ~$7,000/year for baseline entry organizational monitoring scopes | 🚫 No permanent free tier or self-serve trial; live product demos and custom perimeter scoping consultations on request | Tech-enabled managed ASM combining automated external/cloud discovery with manual offensive validation by pen-testers. |
+| **[Censys](https://censys.com/)** | $328M+ Valuation *($149M+ Raised; Series D 2026)* | $62 – $69/month *(Solo tier, ~$744/yr)*; Teams tier at $449 – $499/month | 🎁 Permanent Free Community Tier: Capped at 1 page (100 results) per query, basic protocols only, no historical host timelines | Premier internet-wide scanning map covering all 65,535 ports with multi-perspective first-party scan refresh rates. |
+| **[Bishop Fox Cosmos](https://bishopfox.com/)** | ~$250M – $500M Valuation *(~$100M – $115M Revenue; $154M+ Raised)* | Custom enterprise contracts scoped to monitored digital perimeter and subsidiary size | 🚫 No free tier for Cosmos platform; maintains free open-source utilities (AIMap, CloudFox, Eyeballer) | Managed continuous threat exposure management (CTEM) combining continuous automated reconnaissance with red team exploit validation. |
+| **[Hadrian](https://www.hadrian.io/)** | ~$65M Total Funding *($40M Series B in Oct 2026; 200+ clients)* | €1,250/test for on-demand Nova agentic pentesting; annual Atlas platform subscriptions scale with perimeter scope | 🎁 Complimentary single external perimeter discovery scan available via website; no self-serve Atlas trial | Autonomous agentic AI offensive security platform pairing continuous perimeter exposure discovery with automated pentesting. |
+| **[ProjectDiscovery Cloud](https://cloud.projectdiscovery.io/)** | $28M Total Funding *(Series A led by CRV; ~$5M – $6M ARR)* | $200/seat/month *(Pay-As-You-Go / Team tier, billed annually)* | 🎁 Permanent Free Researcher Plan: 1 seat, limited one-time usage allowances, standard AI/scanner models, community Nuclei templates | Cloud orchestration dashboard for favorite open-source tools (Nuclei, Subfinder, httpx) with continuous scanning automation. |
+| **[Shodan](https://www.shodan.io/)** | Bootstrapped & Profitable *(Solo-founded, independent since 2009)* | $49 one-time lifetime membership; API subscriptions start at $69/month *(Freelancer)* to $359 – $1,099/month *(Corporate)* | 🎁 Permanent Free Account: Capped at 100 search results/query, basic filters only, 0 scan credits, 0 monitored network IPs (free .edu upgrade) | The original search engine for internet-connected devices, indexing exposed IoT devices, industrial systems, and server banners. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+Explore the most impactful open-source tools and frameworks for self-hosted attack surface discovery, network cartography, and vulnerability scanning.
+
+### Top Open-Source ASM & Recon Tools (Ranked by Stars)
+
+- **[ProjectDiscovery Nuclei](https://github.com/projectdiscovery/nuclei)** [![Stars](https://img.shields.io/github/stars/projectdiscovery/nuclei?style=social&color=white)](https://github.com/projectdiscovery/nuclei/stargazers)
+  - **Focus**: Fast, highly customizable template-based vulnerability scanner (MIT).
+  - **Overview**: The gold standard for vulnerability scanning across modern ASM pipelines. Powered by thousands of community-curated YAML templates to uncover misconfigurations, unpatched CVEs, default credentials, and zero-day vulnerabilities across distributed web perimeters.
+  - **Stack**: Go • CLI / Docker / Cloud.
+
+- **[Masscan](https://github.com/robertdavidgraham/masscan)** [![Stars](https://img.shields.io/github/stars/robertdavidgraham/masscan?style=social&color=white)](https://github.com/robertdavidgraham/masscan/stargazers)
+  - **Focus**: Ultra-fast TCP port scanner capable of scanning the entire internet in under 5 minutes (AGPL-3.0).
+  - **Overview**: Asynchronous transmission architecture producing raw port scanning speed comparable to Censys/Shodan infrastructure. Regularly used as the underlying high-throughput network engine in custom enterprise ASM frameworks.
+  - **Stack**: C • CLI.
+
+- **[SpiderFoot](https://github.com/smicallef/spiderfoot)** [![Stars](https://img.shields.io/github/stars/smicallef/spiderfoot?style=social&color=white)](https://github.com/smicallef/spiderfoot/stargazers)
+  - **Focus**: Open-source intelligence (OSINT) automation and attack surface discovery engine (MIT).
+  - **Overview**: Integrates with over 200 OSINT data sources to map IP addresses, domain names, e-mail addresses, subnets, and cloud infrastructure. Provides automated asset discovery, visual graph-based investigation, and threat intel enrichment.
+  - **Stack**: Python • Web UI / CLI.
+
+- **[OWASP Amass](https://github.com/owasp-amass/amass)** [![Stars](https://img.shields.io/github/stars/owasp-amass/amass?style=social&color=white)](https://github.com/owasp-amass/amass/stargazers)
+  - **Focus**: In-depth network mapping and external asset discovery (Apache-2.0).
+  - **Overview**: Industry staple for subdomain enumeration utilizing 50+ data sources, DNS brute-forcing, certificate transparency logs, web archives, and graph database storage. Forms the recon cornerstone for red teams at Accenture and Visma.
+  - **Stack**: Go • CLI / Docker.
+
+- **[ProjectDiscovery Subfinder](https://github.com/projectdiscovery/subfinder)** [![Stars](https://img.shields.io/github/stars/projectdiscovery/subfinder?style=social&color=white)](https://github.com/projectdiscovery/subfinder/stargazers)
+  - **Focus**: Fast, passive subdomain enumeration tool (MIT).
+  - **Overview**: Built specifically for passive asset reconnaissance. Queries numerous public APIs without sending direct traffic to the target organization, making it stealthy, blisteringly fast, and resilient against rate limits.
+  - **Stack**: Go • CLI.
+
+- **[reNgine](https://github.com/yogeshojha/rengine)** [![Stars](https://img.shields.io/github/stars/yogeshojha/rengine?style=social&color=white)](https://github.com/yogeshojha/rengine/stargazers)
+  - **Focus**: Automated web application reconnaissance framework with a sleek UI (GPL-3.0).
+  - **Overview**: Orchestrates Amass, Subfinder, Naabu, and Nuclei into a single glass-box workflow with automated screenshot capturing, directory fuzzing, periodic scanning, diff notifications (Slack/Discord), and one-click HackerOne reporting.
+  - **Stack**: Python (Django), PostgreSQL, Redis • Docker Compose.
+
+- **[Recon-ng](https://github.com/lanmaster53/recon-ng)** [![Stars](https://img.shields.io/github/stars/lanmaster53/recon-ng?style=social&color=white)](https://github.com/lanmaster53/recon-ng/stargazers)
+  - **Focus**: Modular reconnaissance and open-source intelligence framework (GPL-3.0).
+  - **Overview**: Metasploit-like command-line interface designed for comprehensive web reconnaissance. Provides independent modules for contacts, hosts, domains, credential leaks, and automated reporting.
+  - **Stack**: Python • CLI.
+
+- **[OWASP Nettacker](https://github.com/OWASP/Nettacker)** [![Stars](https://img.shields.io/github/stars/OWASP/Nettacker?style=social&color=white)](https://github.com/OWASP/Nettacker/stargazers)
+  - **Focus**: Automated penetration testing and network vulnerability scanning framework (Apache-2.0).
+  - **Overview**: Modular framework to discover subdomains, open ports, default passwords, and web vulnerabilities. Supports custom evasion packet-crafting (SYN/ACK/ICMP) to bypass IDS/WAF solutions during external asset checks.
+  - **Stack**: Python • CLI / Web GUI / Docker.
+
+- **[IVRE](https://github.com/ivre/ivre)** [![Stars](https://img.shields.io/github/stars/ivre/ivre?style=social&color=white)](https://github.com/ivre/ivre/stargazers)
+  - **Focus**: Network reconnaissance framework for self-hosted internet-wide scanning (GPL-3.0).
+  - **Overview**: The mature open-source alternative to Censys and Shodan. Leverages Nmap, Masscan, Zeek, and passive DNS sensors to let enterprise security operations run a private, fully sovereign internet scanning intelligence platform.
+  - **Stack**: Python • Web Console / CLI.
+
+- **[Findomain](https://github.com/Findomain/Findomain)** [![Stars](https://img.shields.io/github/stars/Findomain/Findomain?style=social&color=white)](https://github.com/Findomain/Findomain/stargazers)
+  - **Focus**: Cross-platform, high-speed subdomain discovery tool (GPL-3.0).
+  - **Overview**: Optimized in Rust for blazing speed and memory efficiency. Capable of parsing multiple certificate databases, APIs, and web services, offering automated change alerts via webhooks for new subdomains.
+  - **Stack**: Rust • CLI / Docker.
+
+- **[CloudFox](https://github.com/BishopFox/cloudfox)** [![Stars](https://img.shields.io/github/stars/BishopFox/cloudfox?style=social&color=white)](https://github.com/BishopFox/cloudfox/stargazers)
+  - **Focus**: Situational awareness and attack path enumeration for cloud attack surfaces (GPL-3.0).
+  - **Overview**: Developed by Bishop Fox Labs to automate post-discovery asset enumeration across AWS, Azure, and GCP. Uncovers exploitable misconfigurations, exposed IAM roles, unauthenticated storage, and internet-facing cloud endpoints.
+  - **Stack**: Go • CLI.
+
+- **[OASM (Open Attack Surface Management)](https://github.com/oasm-platform/open-asm)** [![Stars](https://img.shields.io/github/stars/oasm-platform/open-asm?style=social&color=white)](https://github.com/oasm-platform/open-asm/stargazers)
+  - **Focus**: Modern distributed open-source ASM platform architecture (GPL-3.0).
+  - **Overview**: Complete platform featuring multi-workspace asset inventory (domains, IPs, cloud services), distributed worker orchestration, vulnerability tracking, AI MCP (Model Context Protocol) server integration, and live dashboards.
+  - **Stack**: Web Console, Core API, Redis Queue, Distributed Workers • Docker Compose.
+
+- **[reNgine-ng](https://github.com/Security-Tools-Alliance/rengine-ng)** [![Stars](https://img.shields.io/github/stars/Security-Tools-Alliance/rengine-ng?style=social&color=white)](https://github.com/Security-Tools-Alliance/rengine-ng/stargazers)
+  - **Focus**: Community-driven, refactored next-generation fork of reNgine (GPL-3.0).
+  - **Overview**: Rebuilt to modernize the original reNgine recon suite with enhanced scan performance, updated container orchestration, optimized database schemas, and expanded Nuclei template execution workflows.
+  - **Stack**: Python, PostgreSQL, Redis • Docker Compose.
+
+- **[vamp-easm](https://github.com/Vampsecure-Labs/vamp-easm)** [![Stars](https://img.shields.io/github/stars/Vampsecure-Labs/vamp-easm?style=social&color=white)](https://github.com/Vampsecure-Labs/vamp-easm/stargazers)
+  - **Focus**: Lightweight continuous external attack surface monitoring engine with delta detection (GPL-3.0).
+  - **Overview**: Compares daily scan snapshots in SQLite to isolate exact perimeter drifts, newly discovered open ports, expired TLS certificates, or unfamiliar subdomains, issuing instant webhook alerts for CI/CD pipelines.
+  - **Stack**: Python • CLI / pip.
+
+---
+
+### 🛠️ Architectural Blueprint for Custom ASM Pipelines
+
+For security organizations building an autonomous, self-hosted ASM platform:
+1. **Discovery & Cartography Layer**: Run **OWASP Amass** and **Subfinder** for passive & active subdomain enumeration, combined with **Findomain**.
+2. **High-Speed Probing**: Dispatch **Masscan** for line-rate port discovery and service banner identification.
+3. **Continuous Exposure Drift**: Utilize **vamp-easm** to compute differential deltas against previous SQLite/PostgreSQL baselines.
+4. **Vulnerability Assessment**: Trigger **ProjectDiscovery Nuclei** and **OWASP Nettacker** to validate exploitability and detect CVE exposures.
+5. **Platform & Workflow Orchestration**: Interface via **OASM** or **reNgine** for centralized visibility, dashboard reporting, and Slack/Discord alerting.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are warmly welcomed! Help make this curated ASM repository the definitive industry guide:
+
+1. 🍴 **Fork the repository** on GitHub.
+2. 🌿 **Create a feature branch**: `git checkout -b feature/add-new-asm-tool`.
+3. ✍️ **Add or refine entries** following the established table / badge formatting.
+4. 📝 **Ensure neutrality**: Keep descriptions factual, unbiased, and include verified pricing or license details.
+5. 🚀 **Submit a Pull Request** with a brief summary of the addition.
+
+---
+
+## 💖 Support
+
+If you find this repository valuable for your security research, threat modeling, or infrastructure hardening, please consider showing your support:
+
+- ⭐ **Star this repository** to help others discover it!
+- 🍴 **Fork and contribute** new tools and market updates.
+- 📣 **Share with peers** across LinkedIn, X (Twitter), and security Discords.
+- ☕ **Buy a coffee & sponsor development**: Support ongoing open-source curation and cybersecurity projects on the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Attack-Surface-Management-ASM&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Attack-Surface-Management-ASM&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer
+
+- 📖 This repository is a community-curated educational and professional resource. Inclusion does not imply endorsement.
+- ⚖️ **Legal Notice**: External attack surface scanning tools must strictly be executed against networks, domains, and assets that you legally own or hold explicit, written authorization to evaluate. Unauthorized reconnaissance and testing violate cybersecurity laws, including the Computer Fraud and Abuse Act (CFAA) and international counterparts.
+- 🔍 **Scanning Infrastructure vs. Reconnaissance Tools**: Remember that internet-wide platforms (Censys, Shodan) maintain continuous global telemetry networks. Standalone recon tools (Amass, Subfinder) provide point-in-time perimeter snapshots. Choose your architecture according to whether your program requires comprehensive historical mapping, automated scanning workflows, or differential delta alerting.
+
+---
+
+<p align="center">
+  <b>Built with care for security researchers, DevSecOps teams, and red teams worldwide. 🛡️</b>
+</p>
