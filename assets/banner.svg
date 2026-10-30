@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#060913"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+    <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Radar Sweep Mask -->
+    <mask id="radarMask">
+      <circle cx="980" cy="210" r="170" fill="#ffffff" />
+    </mask>
+
+    <style>
+      @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pulseGrid {
+        0%, 100% { opacity: 0.15; }
+        50% { opacity: 0.35; }
+      }
+      @keyframes pingRing {
+        0% { r: 20; opacity: 0.9; }
+        100% { r: 160; opacity: 0; }
+      }
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-15px) translateX(10px); opacity: 0.8; }
+        100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+      }
+      @keyframes nodeBlink {
+        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.3); }
+      }
+      .sweep-ray {
+        transform-origin: 980px 210px;
+        animation: radarSweep 6s linear infinite;
+      }
+      .grid-layer {
+        animation: pulseGrid 4s ease-in-out infinite;
+      }
+      .radar-ping-1 {
+        animation: pingRing 3.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .radar-ping-2 {
+        animation: pingRing 3.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        animation-delay: 1.75s;
+      }
+      .particle-1 { animation: floatParticle 5s ease-in-out infinite; }
+      .particle-2 { animation: floatParticle 7s ease-in-out infinite 1s; }
+      .node-target {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: nodeBlink 2.5s ease-in-out infinite;
+      }
+      .txt-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        letter-spacing: -0.5px;
+      }
+      .txt-sub {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+        letter-spacing: 0.2px;
+      }
+      .txt-pill {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)"/>
+  <rect width="1200" height="420" rx="16" fill="none" stroke="#334155" stroke-width="2" opacity="0.6"/>
+
+  <!-- Matrix/Mesh Background Grid -->
+  <g class="grid-layer" stroke="#1e293b" stroke-width="1">
+    <line x1="60" y1="0" x2="60" y2="420" />
+    <line x1="160" y1="0" x2="160" y2="420" />
+    <line x1="260" y1="0" x2="260" y2="420" />
+    <line x1="360" y1="0" x2="360" y2="420" />
+    <line x1="460" y1="0" x2="460" y2="420" />
+    <line x1="560" y1="0" x2="560" y2="420" />
+    <line x1="660" y1="0" x2="660" y2="420" />
+    <line x1="760" y1="0" x2="760" y2="420" />
+    <line x1="860" y1="0" x2="860" y2="420" />
+    <line x1="960" y1="0" x2="960" y2="420" />
+    <line x1="1060" y1="0" x2="1060" y2="420" />
+    <line x1="1160" y1="0" x2="1160" y2="420" />
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+  </g>
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="150" cy="100" r="120" fill="#38bdf8" opacity="0.08" filter="url(#glowCyan)"/>
+  <circle cx="980" cy="210" r="180" fill="#6366f1" opacity="0.12" filter="url(#glowPurple)"/>
+
+  <!-- Radar Scope Graphic on Right Side -->
+  <g opacity="0.85">
+    <!-- Concentric Target Rings -->
+    <circle cx="980" cy="210" r="160" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4" />
+    <circle cx="980" cy="210" r="120" fill="none" stroke="#1e293b" stroke-width="1.5" />
+    <circle cx="980" cy="210" r="80" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 6" />
+    <circle cx="980" cy="210" r="40" fill="none" stroke="#1e293b" stroke-width="1.5" />
+    <circle cx="980" cy="210" r="4" fill="#38bdf8" />
+
+    <!-- Crosshairs -->
+    <line x1="810" y1="210" x2="1150" y2="210" stroke="#334155" stroke-width="1" opacity="0.6"/>
+    <line x1="980" y1="40" x2="980" y2="380" stroke="#334155" stroke-width="1" opacity="0.6"/>
+
+    <!-- Pulsing Radar Acoustic Waves -->
+    <circle class="radar-ping-1" cx="980" cy="210" r="20" fill="none" stroke="#00f2fe" stroke-width="2" opacity="0.7"/>
+    <circle class="radar-ping-2" cx="980" cy="210" r="20" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Rotating Radar Scanner Beam -->
+    <g class="sweep-ray" mask="url(#radarMask)">
+      <path d="M 980 210 L 1150 160 A 170 170 0 0 1 1150 210 Z" fill="url(#cyberCyan)" opacity="0.3"/>
+    </g>
+
+    <!-- Detected Surface Threat Nodes -->
+    <g class="node-target" style="animation-delay: 0.2s;">
+      <circle cx="920" cy="150" r="5" fill="#f43f5e" filter="url(#glowCyan)"/>
+      <circle cx="920" cy="150" r="10" fill="none" stroke="#f43f5e" stroke-width="1" opacity="0.5"/>
+    </g>
+    <g class="node-target" style="animation-delay: 1.1s;">
+      <circle cx="1060" cy="170" r="4" fill="#38bdf8"/>
+    </g>
+    <g class="node-target" style="animation-delay: 1.8s;">
+      <circle cx="950" cy="290" r="6" fill="#fbbf24"/>
+      <circle cx="950" cy="290" r="12" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.4"/>
+    </g>
+    <g class="node-target" style="animation-delay: 0.7s;">
+      <circle cx="1040" cy="260" r="4" fill="#a855f7"/>
+    </g>
+  </g>
+
+  <!-- Left Side Floating Cyber Particles -->
+  <g class="particle-1">
+    <circle cx="80" cy="180" r="2" fill="#38bdf8" />
+    <circle cx="580" cy="90" r="2.5" fill="#818cf8" />
+  </g>
+  <g class="particle-2">
+    <circle cx="620" cy="320" r="2" fill="#c084fc" />
+    <circle cx="120" cy="340" r="1.5" fill="#38bdf8" />
+  </g>
+
+  <!-- Foreground Content: Header, Titles, Pills (Positioned cleanly to stay 100% visible) -->
+  <g transform="translate(60, 0)">
+    <!-- Category Pill -->
+    <g transform="translate(0, 52)">
+      <rect width="265" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.95"/>
+      <circle cx="16" cy="15" r="4" fill="#00f2fe"/>
+      <text x="30" y="20" fill="#38bdf8" class="txt-pill">CYBERSECURITY INTELLIGENCE</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="132" fill="#ffffff" class="txt-title">
+      Awesome <tspan fill="url(#accentGrad)">Attack Surface</tspan>
+    </text>
+    <text x="0" y="180" fill="#ffffff" class="txt-title">
+      Management <tspan fill="#38bdf8">(ASM)</tspan>
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="224" fill="#94a3b8" class="txt-sub">
+      Curated directory of enterprise SaaS solutions &amp; open-source recon frameworks
+    </text>
+    <text x="0" y="252" fill="#64748b" class="txt-sub" font-size="16">
+      Continuous Asset Discovery • Exposure Prioritization • Shadow IT &amp; Cloud Cartography
+    </text>
+
+    <!-- Interactive Badges / Capability Highlights -->
+    <g transform="translate(0, 290)">
+      <!-- Pill 1: EASM -->
+      <g transform="translate(0, 0)">
+        <rect width="125" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+        <text x="14" y="22" fill="#e2e8f0" class="txt-pill">⚡ EASM &amp; CAASM</text>
+      </g>
+      <!-- Pill 2: Open Source -->
+      <g transform="translate(137, 0)">
+        <rect width="145" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+        <text x="14" y="22" fill="#38bdf8" class="txt-pill">🛡️ 13+ Open Source</text>
+      </g>
+      <!-- Pill 3: Commercial SaaS -->
+      <g transform="translate(294, 0)">
+        <rect width="145" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+        <text x="14" y="22" fill="#a855f7" class="txt-pill">📊 10 Top SaaS Tiers</text>
+      </g>
+      <!-- Pill 4: CTEM Ready -->
+      <g transform="translate(451, 0)">
+        <rect width="130" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+        <text x="14" y="22" fill="#34d399" class="txt-pill">🔍 CTEM &amp; Recon</text>
+      </g>
+    </g>
+  </g>
+</svg>
