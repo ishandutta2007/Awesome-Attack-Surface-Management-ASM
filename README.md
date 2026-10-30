@@ -32,79 +32,30 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
 
+The global Attack Surface Management (ASM) market is valued between **$1.25 billion and $1.86 billion** in 2025–2026, projected to surpass **$5.7 billion by 2030** at an exceptional compound annual growth rate (CAGR) of roughly **24% to 31%**. The sector is **moderately to highly fragmented and intensely competitive** rather than a winner-take-all ecosystem—featuring agile specialized pure-play innovators (e.g., Censys, Hadrian, ProjectDiscovery) competing alongside major cybersecurity conglomerates (Palo Alto Networks, CrowdStrike) that routinely acquire niche EASM solutions to bundle into broader CTEM, XDR, and Exposure Management platforms.
 
 ## SaaS/Hosted Platforms
 
-
-
-- **[CrowdStrike Falcon Surface](https://www.crowdstrike.com/en-au/resources/data-sheets/falcon-surface/)**
-
-  **Adversary-driven External Attack Surface Management (EASM)** within the Falcon platform. Maps and indexes over **7 billion exposed assets globally each year** (160 million weekly) without requiring an asset inventory—only a domain address is needed to map the entire ecosystem, including subsidiaries and third-party vendors . Prioritizes risks using CrowdStrike's adversary intelligence, CVE scores, geolocation, attack history, and asset type. **Pricing**: Quote-only; enterprise contracts. **Free tier**: None. **Best for**: CrowdStrike customers wanting EASM tightly integrated with threat intelligence and vulnerability management—**trade-off**: ecosystem lock-in and enterprise pricing.
-
-
-
-- **[Palo Alto Cortex Xpanse](https://www.paloaltonetworks.com/)**
-
-  **Active External Attack Surface Management** with continuous monitoring and exposure management. Named a Leader in Forrester's ASM evaluation . Discovers unmanaged AI infrastructure ("Shadow AI") and OT devices exposed to the internet. Integrates with Cortex XSIAM for unified SecOps . **Pricing**: Quote-only; subscription based on monitored assets and features . **Free tier**: None. **Best for**: Palo Alto customers wanting ASM integrated with a broader Cortex security platform.
-
-
-
-- **[Censys](https://censys.com/)**
-
-  **Internet-wide attack surface management** powered by the Censys Internet Map. Discovers assets across **all 65,535 ports**—including non-standard and high ports routinely missed by competitors. Claims **6x faster** asset discovery and up to **65% more attack surface visibility** . Uses first-party scanning, not just third-party data. **Pricing**: Quote-only; tiered by asset count. **Free tier**: None. **Best for**: teams wanting the most complete internet-wide visibility—**note**: Censys's scanning map is a genuine differentiator that open-source tools cannot replicate.
-
-
-
-- **[Shodan](https://www.shodan.io/)**
-
-  **Search engine for internet-connected devices** with a continuously updated index of exposed services, banners, and vulnerabilities. Shodan Enterprise provides monitoring and alerting for organizational assets . **Pricing**: Freemium for basic search; Enterprise quote-only. **Free tier**: Limited search results. **Best for**: security researchers and teams wanting a broad view of internet exposure—**note**: Shodan is a data source, not a full ASM workflow platform.
-
-
-
-- **[Recorded Future Attack Surface Intelligence](https://www.recordedfuture.com/products/attack-surface-intelligence)**
-
-  **Intelligence-driven EASM** with 10+ years of historical DNS, WHOIS, and SSL/TLS data. Customers report **29% increase in visibility** and **51% reduction in vulnerable attack surface** within six months . Integrates with Recorded Future's Intelligence Graph for threat context on exposures adversaries are actively targeting. **Pricing**: Quote-only. **Free tier**: None. **Best for**: organizations wanting ASM enriched with threat intelligence—**note**: strongest for teams already using Recorded Future.
-
-
-
-- **[NetSPI Attack Surface Visibility](https://www.netspi.com/attack-surface-visibility/)**
-
-  **Managed ASM service** with weekly external discovery scans, cloud configuration reviews (AWS, Azure), dark web monitoring, and look-alike domain detection . Delivered by offensive security experts who validate findings. **Pricing**: Quote-only; managed service. **Free tier**: None. **Best for**: organizations wanting human-validated ASM with penetration testing expertise—**note**: service-oriented rather than self-service tooling.
-
-
-
-- **[Bishop Fox Cosmos](https://bishopfox.com/)**
-
-  **Fully managed ASM service** with tech-enabled experts who validate asset ownership and exploitability. A Fortune 500 utility relies on Cosmos for continuous perimeter tracking across subsidiaries and compliance with NERC CIP/TSA directives . **Pricing**: Quote-only; managed service. **Free tier**: None. **Best for**: critical infrastructure and regulated industries wanting validated findings with expert guidance.
-
-
-
-- **[Rapid7](https://www.rapid7.com/)**
-
-  **Security analytics and ASM** through Insight platform. **Pricing**: Quote-only. **Free tier**: Limited. **Best for**: Rapid7 customers wanting ASM alongside vulnerability management and SIEM.
-
-
-
-- **[ProjectDiscovery Cloud](https://cloud.projectdiscovery.io/)**
-
-  **Managed platform for ProjectDiscovery's open-source tools** (Nuclei, Subfinder, httpx, etc.) with cloud orchestration and collaboration . **Pricing**: Free tier; paid plans for teams. **Free tier**: Yes. **Best for**: teams already using ProjectDiscovery tools wanting managed execution and collaboration.
-
-
-
-- **[Hadrian](https://www.hadrian.io/)**
-
-  **Agentic AI offensive security platform** combining continuous exposure management (Atlas) with agentic penetration testing (Nova). Claims **10x greater visibility** into critical exposures and **80% reduction** in time to resolution . Raised $40M in 2026; customers include McKesson, NBC Universal, TotalEnergies. **Pricing**: Quote-only. **Free tier**: None. **Best for**: organizations wanting AI-driven exploitability validation at scale.
-
-
+| Product | Company Valuation / Scale | Starting Pricing | Free Tier Limits / Trial | Core Differentiator / Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Palo Alto Cortex Xpanse](https://www.paloaltonetworks.com/)** | ~$116B – $128B Market Cap (Public: PANW) | ~$60,000/yr base platform + $7/asset/yr (~$70,850/yr on UK G-Cloud; entry deployments ~$95,000/yr) | No permanent free tier; Proof of Concept (PoC) / guided trial available via direct sales/partner engagement only | Active EASM integrating with Cortex XSIAM/XSOAR, automated remediation, unmanaged Shadow AI/OT exposure discovery. |
+| **[CrowdStrike Falcon Surface](https://www.crowdstrike.com/en-au/resources/data-sheets/falcon-surface/)** | ~$98B – $137B Market Cap (Public: CRWD) | ~$248 – $378/tier/yr modular add-on pricing (Texas DIR schedule; core Falcon endpoint plans start at $59.99/device/yr) | 15-day free trial of baseline Falcon platform (NGAV/Device Control, no credit card required); Surface module evaluation available on request | Adversary-driven EASM indexing 7B+ internet assets yearly; tight integration with Falcon Threat Intelligence & XDR. |
+| **[Recorded Future Attack Surface Intelligence](https://www.recordedfuture.com/products/attack-surface-intelligence)** | $2.65B Acquisition Valuation (Mastercard; ~$300M ARR) | Starting at £67,500/yr (~$85,000/yr) for dedicated ASI modules on UK G-Cloud; enterprise threat intelligence bundles start at ~$40,000 – $60,000/yr | No permanent free tier; 30-day integration trials (Sentinel/Splunk) and free utility tools (browser extension & file sandbox) | 10+ years of historical DNS/WHOIS/TLS intelligence mapped against adversary infrastructure via Intelligence Graph. |
+| **[Rapid7](https://www.rapid7.com/)** | ~$1B Market Cap / ~$860M Revenue (Public: RPD) | $1.62/asset/month billed annually (~$9,720/yr for 500 assets minimum); Command cloud security tiers start at $5,775/mo | 30-day full-featured free trial of InsightVM/Security Console & Agents (no credit card required) | Full-lifecycle exposure management and hybrid perimeter discovery (Surface Command) unified with InsightVM & SIEM. |
+| **[NetSPI Attack Surface Visibility](https://www.netspi.com/attack-surface-visibility/)** | ~$200M+ Revenue / $500M KKR Investment (Merged with Synack) | Starting at ~$7,000/year for baseline entry monitoring scopes | No permanent free tier or self-serve trial; live product demos and scoping consultations available on request | Tech-enabled managed ASM combining automated continuous external/cloud discovery with human penetration tester validation. |
+| **[Censys](https://censys.com/)** | $328M+ Valuation ($149M+ Raised; Series D 2026) | $62 – $69/month (Solo tier, ~$744/yr); Teams tier at $449 – $499/month | Permanent Free Community Tier: Capped at 1 page (100 results) per query, basic protocols/lookups only, no historical host timelines | Comprehensive internet-wide scanning map covering all 65,535 ports with high-frequency continuous visibility. |
+| **[Bishop Fox Cosmos](https://bishopfox.com/)** | ~$250M – $500M Valuation (~$100M – $115M Revenue; $154M+ Raised) | Quote-based enterprise engagements; custom annual subscriptions based on active perimeter scope | No free tier or self-serve trial for Cosmos; maintains free open-source tooling (AIMap, CloudFox, Eyeballer) | Managed continuous threat exposure management (CTEM) combining automated asset discovery with manual expert exploitability validation. |
+| **[Hadrian](https://www.hadrian.io/)** | ~$65M Total Funding ($40M Series B in Oct 2026; 200+ enterprise clients) | €1,250/test for on-demand Nova agentic pentesting; annual Atlas platform subscriptions scale by monitored perimeter | No self-serve trial for Atlas platform; complimentary single external perimeter discovery scan available on website | Autonomous agentic AI offensive security platform combining continuous perimeter mapping with autonomous penetration testing. |
+| **[ProjectDiscovery Cloud](https://cloud.projectdiscovery.io/)** | $28M Total Funding (Series A led by CRV; ~$5M – $6M ARR) | $200/seat/month (Pay-As-You-Go/Team tier, billed annually) | Permanent Free Researcher Plan: 1 seat, limited one-time usage allowance, standard AI/scanner models, community Nuclei templates | Cloud orchestration platform for open-source favorites (Nuclei, Subfinder, httpx) with continuous asset scanning workflows. |
+| **[Shodan](https://www.shodan.io/)** | Bootstrapped & Self-Sustaining (Solo founder, profitable since 2009) | $49 one-time lifetime membership; API subscriptions start at $69/month (Freelancer) to $359 – $1,099/month (Corporate) | Permanent Free Account: Max 100 search results/query, basic filters only, 0 scan credits, 0 monitored network IPs (free academic upgrades for .edu) | Pioneering internet-connected device search engine with vast historical banner, service, and IoT exposure indexing. |
 
 ## Open-Source GitHub Projects
 
